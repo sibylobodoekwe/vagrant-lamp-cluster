@@ -1,4 +1,9 @@
-FROM httpd:latest
+FROM ubuntu:22.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update
+RUN apt-get install apache2 -y
+RUN apt-get install php -y
+RUN apt-get install php-mysql -y
+ADD . /var/www/html
 EXPOSE 80
-RUN apt update && apt install -y apache2 mysql-server php libapache2-mod-php
-RUN systemctl enable apache2 && systemctl enable mysql && mysql_secure_installation
+CMD [“apache2ctl”, “-D”, “FOREGROUND”]
