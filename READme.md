@@ -1,7 +1,5 @@
 # Deployment of Vagrant Ubuntu Cluster with LAMP Stack With Docker
 
-![Screenshot](images/docker.png)
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -16,6 +14,13 @@
 ## Introduction
 
 This project provides a bash script to orchestrate the automated deployment of two Vagrant-based Ubuntu systems, designated as 'Master' and 'Slave', with an integrated LAMP (Linux, Apache, MySQL, PHP) stack on both systems.
+
+## Prerequisites
+
+To execute this script, you need the following:
+
+- [Vagrant](https://www.vagrantup.com/downloads.html) installed on your system.
+- A Docker image with Vagrant support (included in the script).
 
 ## Project Overview
 
@@ -40,6 +45,8 @@ The project automates the deployment and configuration of a two-node Ubuntu clus
 - Enable SSH key-based authentication:
   - The Master node (user 'altschool') can SSH into the Slave node without a password.
 
+  ![Screenshot](images/master->slave.png)
+
 ### Data Management and Transfer
 
 - On initiation:
@@ -48,6 +55,7 @@ The project automates the deployment and configuration of a two-node Ubuntu clus
 ### Process Monitoring
 
 - The Master node displays an overview of Linux process management, showcasing currently running processes.
+![Screenshot](images/master-top.png)
 
 ### LAMP Stack Deployment
 
@@ -55,13 +63,8 @@ The project automates the deployment and configuration of a two-node Ubuntu clus
   - Ensure Apache is running and set to start on boot.
   - Secure the MySQL installation and initialize it with a default user and password.
   - Validate PHP functionality with Apache.
+  ![Screenshot](images/docker.png)
 
-## Prerequisites
-
-To execute this script, you need the following:
-
-- [Vagrant](https://www.vagrantup.com/downloads.html) installed on your system.
-- A Docker image with Vagrant support (included in the script).
 
 ## Instructions
 
@@ -71,8 +74,6 @@ To execute this script, you need the following:
 
 3. Run the bash script provided in the project directory. This script will create the Vagrant-based Ubuntu cluster, set up user accounts, enable SSH key-based authentication, transfer data, install the LAMP stack, and configure the system.
 
-   ```bash
-       deploy.sh
 The script will guide you through the setup process, and it should automatically deploy the cluster and configure the LAMP stack.
 Documentation
 
@@ -80,12 +81,10 @@ For steps and procedures, please refer to the accompanying documentation located
 
 Also you can read a more detailed guide on this and other cloud projects on my blog https://medium.com/@sibylnkaechi
 
-##Contributing
+## Contributing
 
 Contributions to this project are welcome. Please follow the standard open-source practices and guidelines for contributing.
 
-##License
+## License
 
 This project is licensed under the MIT License.
-
-
