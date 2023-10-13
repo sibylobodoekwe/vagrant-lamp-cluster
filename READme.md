@@ -65,7 +65,6 @@ The project automates the deployment and configuration of a two-node Ubuntu clus
   - Validate PHP functionality with Apache.
   ![Screenshot](images/docker.png)
 
-
 ## Instructions
 
 1. Clone or download this repository.
@@ -79,7 +78,7 @@ Documentation
 
 For steps and procedures, please refer to the accompanying documentation located in the project folder.
 
-Also you can read a more detailed guide on this and other cloud projects on my blog https://medium.com/@sibylnkaechi
+Also you can read a more detailed guide on this and other cloud projects on my blog https://medium.com/sibylnkaechi/automating-deployment-of-a-lamp-stack-on-a-vagrant-ubuntu-cluster-fd48c0119063
 
 ## Contributing
 
