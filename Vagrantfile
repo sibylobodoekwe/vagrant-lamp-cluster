@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   # # Master Node Configuration
   config.vm.define "master" do |master|
     config.vm.hostname = "master"
-    config.vm.network "private_network", ip: "dhcp"
+    config.vm.network "private_network", type: "dhcp"
       # docker.remains_running = true
   end
 
