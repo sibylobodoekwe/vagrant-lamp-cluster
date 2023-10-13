@@ -75,6 +75,15 @@ vagrant ssh master -c "rm /vagrant/master_public_key"
 
 #copy the test.php file to the web directory:
 rsync -avz test.php altschool@slave:/var/www/html/
+ 
+# Enable SSH key-based authentication from 'Master' to 'Slave'
+echo "Configuring SSH key-based authentication from 'Master' to 'Slave'..."
+vagrant ssh master -c 'ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa'
+MASTER_PUBLIC_KEY=$(vagrant ssh master -c 'cat ~/.ssh/id_rsa.pub')
+vagrant ssh slave -c "mkdir -p ~/.ssh && echo '$MASTER_PUBLIC_KEY' >> ~/.ssh/authorized_keys"
 
+# Copy data from 'Master' to 'Slave'
+echo "Copying data from 'Master' to 'Slave'..."
+vagrant ssh master -c 'rsync -avz /mnt/altschool/ altschool@slave:/mnt/altschool/slave/'
 
 echo "Deployment completed successfully!"
